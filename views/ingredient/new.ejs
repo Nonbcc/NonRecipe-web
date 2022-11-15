@@ -1,0 +1,18 @@
+<%- include("../partials/header.ejs") %> 
+<div class="container">
+<h1>Add your new ingredient</h1>
+<form action="/ingredients" method="POST" enctype="multipart/form-data">
+<div class="mb-3">
+    <label class="form-label">Ingredient</label>
+    <input type="text" class="form-control" name="ingredient[ingredient_name]" placeholder="Print title">
+</div>
+<div class="mb-3">
+    <label class="form-label">Image</label>
+    <input type="file" class="form-control" name="image" accept="image/*">
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+<a href="/ingredients">Go back</a>
+</form>
+</div>
+
+<%- include("../partials/footer.ejs") %> 

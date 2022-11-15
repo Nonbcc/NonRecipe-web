@@ -1,0 +1,36 @@
+<%- include("../partials/header.ejs") %> 
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+          <a href="/ingredients/new" class="btn btn-primary my-2">Add new ingredient</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <% ingredients.forEach(function (ingredients) { %> 
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="<%= ingredients.image %>" height="300px" class="index-image">
+            <div class="card-body">
+              <p class="card-text">Ingredient: <%= ingredients.ingredient_name %></p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/ingredients/<%= ingredients._id %> " class="btn btn-sm btn-outline-secondary">View</a>
+                  <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %> 
+      </div>
+    </div>
+  </div>
+
+
+<%- include("../partials/footer.ejs") %> 

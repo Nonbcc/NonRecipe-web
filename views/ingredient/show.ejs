@@ -1,0 +1,11 @@
+<%- include("../partials/header.ejs") %> 
+<h1><%= ingredient.ingredient_name %></h1>
+<img src="<%= ingredient.image %>">
+<p>Submitted by <%= ingredient.author.username %> </p>
+<% if(currentUser && ingredient.author.id.equals(currentUser._id) || (currentUser && currentUser.isAdmin)){ %> 
+    <a href="/ingredients/<%= ingredient._id %>/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
+    <form id="delete-form" action="/ingredients/<%= ingredient._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
+    </form>
+<% } %>  
+<%- include("../partials/footer.ejs") %> 

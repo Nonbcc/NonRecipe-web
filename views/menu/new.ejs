@@ -1,0 +1,22 @@
+<%- include("../partials/header.ejs") %> 
+<div class="container">
+<h1>Add your new recipe</h1>
+<form action="/menus" method="POST" enctype="multipart/form-data">
+<div class="mb-3">
+    <label class="form-label">Recipe</label>
+    <input type="text" class="form-control" name="menu[menu_name]" placeholder="Print title">
+</div>
+<div class="mb-3">
+    <label class="form-label">Description</label>
+    <input type="text" class="form-control" name="menu[description]" placeholder="description">
+</div>
+<div class="mb-3">
+    <label class="form-label">Image</label>
+    <input type="file" class="form-control" name="image" accept="image/*">
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+<a href="/menus">Go back</a>
+</form>
+</div>
+
+<%- include("../partials/footer.ejs") %> 

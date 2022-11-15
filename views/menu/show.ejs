@@ -1,0 +1,12 @@
+<%- include("../partials/header.ejs") %> 
+<h1><%= menu.menu_name %></h1>
+<img src="<%= menu.image %>">
+<p>Submitted by <%= menu.author.username %> </p>
+<p>Description: <%= menu.description %> </p>
+<% if(currentUser && menu.author.id.equals(currentUser._id) || (currentUser && currentUser.isAdmin)){ %> 
+    <a href="/menus/<%= menu._id %>/edit" class="btn btn-sm btn-outline-secondary">Edit</a>
+    <form id="delete-form" action="/menus/<%= menu._id %>?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-sm btn-outline-secondary">Delete</button>
+    </form>
+<% } %>  
+<%- include("../partials/footer.ejs") %> 
